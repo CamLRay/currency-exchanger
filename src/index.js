@@ -11,18 +11,18 @@ async function exchangeApiCall(currency, value, exchangeTo) {
   return data;
 }
 
-console.log(`${process.env.API_KEY}`);
-
 $("form").on("submit", async function(e){
   e.preventDefault();
   const value = $("#user-amount").val();
-  const currency = $("#currency").val();
-  const exchangeTo = "AED";
+  const currency = "USD";
+  const exchangeTo = $("#currency").val();
   if(value && currency && exchangeTo){
-    let exchangeObject = await exchangeApiCall(currency, value, exchangeTo);
-
-    console.log(exchangeObject["conversion_rates"]["ALL"]);
+    exchangeApiCall(currency, value, exchangeTo);
   } else {
-    console.log("missed if");
+    $("h1").text(`Please Enter a number and select a currency`);
   }
 });
+
+// $(document).ready(function(){
+//   $(".user-input").text();
+// });
