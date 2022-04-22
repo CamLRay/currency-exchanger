@@ -1,32 +1,44 @@
-# (Application Name)
+# Currency Exchanger
 
-#### (Brief Description of Application)
+#### Basic example of utlizing and API for content
 
-#### By (Your Name Here)
+#### By Cameron Ray
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* Node.js v16.14.2
+* Node Package Manager
+* Eslint
+* ExchangeRate-API
+* HTML
+* Es6
+* CSS
 
 ## Description
+Currency Exchanger utilizes the ExchangeRate-API to allow users to select a currency to exchange from and then check the exchange rate for all available currencies. It also automatically converts the inputted value to the newly selected currency. By selecting the base currency type at the start, the application can make a single API call for the base currency and the conversion currencies can be changed without requiring a new call.
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
+* Clone the repository
 * sign up for a free key at[ExchangeRate-API](https://www.exchangerate-api.com/) by entering your email and pressing the "Get a Free Key!" button make an account and verify your email to get the key.
 * You will be taken to the ExchangeRate-API dashboard where you can see your key and the uses left this month.
-* Create a .env file in the root of the directroy and add API_KEY={YOURKEYHERE} replacing everything after the equal sign with your api key from ExchangeRate-API.
+* Create a .env file in the root of the currency exchanger directroy and add API_KEY={YOURKEYHERE} replacing everything after the equal sign with your api key from ExchangeRate-API.
+* install dependencies
+```
+$ npm install
+```
+* open the file by running the start script
+```
+$ npm run scrip
+```
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* No Known Bugs
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contact Information
+
+Copyright (c) _April 2022_ _Cameron Ray_
