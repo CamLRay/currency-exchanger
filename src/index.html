@@ -4,27 +4,30 @@
   <title>Currency Exchange-Rate calculator</title>
 </head>
 <body>
-  <div class="error-message"></div>
-  <h1></h1>
-  <div class="user-input">
-    <form id="base-currency">
-      <label for="base=currency-select">Convert From:</label>
-      <select id="base-currency-select">
-        <option>USD</option>
-        <option>EUR</option>
-        <option>JPY</option>
-        <option>CNY</option>
-        <option>GBP</option>
-      </select>
-      <button type="submit">Select</button>
-    </form>
-    <form id="conversion-form" class="hidden">
-      <label for="user-amount">Enter Amount(<span id="user-currency"></span>):</label>
-      <input type="number" id="user-amount">
-      <select id="currency">
-      </select>
-      <button type="submit">Convert</button>
-    </form>
+  <h1 class="heading">Currency Exchanger</h1>
+  <div class="row">
+    <div class="error-message col-12"></div>
+    <div class="user-input col-12">
+      <form id="base-currency">
+        <label for="base=currency-select">Convert From:</label>
+        <select id="base-currency-select">
+          <option>USD</option>
+          <option>EUR</option>
+          <option>JPY</option>
+          <option>CNY</option>
+          <option>GBP</option>
+        </select>
+        <button type="submit" class="btn">Select</button>
+      </form>
+      <form id="conversion-form" class="hidden">
+        <label for="user-amount">Enter Amount(<span id="user-currency"></span>):</label>
+        <input type="number" id="user-amount">
+        <select id="currency">
+        </select>
+        <button type="submit">Convert</button>
+      </form>
+      <div class="output"></div>
+    </div>
   </div>
 </body>
 </html>

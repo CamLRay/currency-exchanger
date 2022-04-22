@@ -1,3 +1,19 @@
+body {
+  background: rgb(53, 53, 53);
+  color: whitesmoke;
+  padding: 5vmin;
+  font-size: 25px;
+}
+
+.heading{
+  color: goldenrod;
+}
+
+.btn {
+  background-color: goldenrod;
+  font-weight: 600;
+}
+
 .hidden {
   display: none;
 }
