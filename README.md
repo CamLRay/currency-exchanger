@@ -18,8 +18,9 @@
 * _This is a great place_
 * _to list setup instructions_
 * _in a simple_
-* _easy-to-understand_
-* _format_
+* sign up for a free key at[ExchangeRate-API](https://www.exchangerate-api.com/) by entering your email and pressing the "Get a Free Key!" button make an account and verify your email to get the key.
+* You will be taken to the ExchangeRate-API dashboard where you can see your key and the uses left this month.
+* Create a .env file in the root of the directroy and add API_KEY={YOURKEYHERE} replacing everything after the equal sign with your api key from ExchangeRate-API.
 
 ## Known Bugs
 
