@@ -5,21 +5,31 @@ import './css/styles.css';
 import ExchangeApi from './js/exchange-service';
 import {convertCurrency} from './js/exchange-logic';
 
-async function exchangeApiCall(currency, value, exchangeTo) {
+async function exchangeApiCall(currency) {
   const data = await ExchangeApi.getRates(currency);
-  convertCurrency(data, value, exchangeTo);
   return data;
 }
 
-$("form").on("submit", async function(e){
+$("#base-currency").on("submit", async function(e){
   e.preventDefault();
-  const value = $("#user-amount").val();
-  const currency = "USD";
-  const exchangeTo = $("#currency").val();
-  if(value && currency && exchangeTo){
-    exchangeApiCall(currency, value, exchangeTo);
+  const baseCurrency = $("#base-currency-select").val();
+  $("#currency").empty();
+  if(baseCurrency){
+    let exchangeRates = await exchangeApiCall(baseCurrency);
+    $("#user-currency").text(`${exchangeRates["base_code"]}`);
+    Object.keys(exchangeRates["conversion_rates"]).forEach(function(currency){
+      $("#currency").append(`<option>${currency}</option>`);
+    });
+    $("#conversion-form").removeClass("hidden");
+
+    $("#conversion-form").on("change submit", function(e){
+      e.preventDefault();
+      const value = $("#user-amount").val();
+      const exchangeTo = $("#currency").val();
+      convertCurrency(exchangeRates, value, exchangeTo);
+    });
   } else {
-    $("h1").text(`Please Enter a number and select a currency`);
+    $("h1").text(`Please select a base currency`);
   }
 });
 

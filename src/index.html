@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang='en-US'>
 <head>
-  <title>Document</title>
+  <title>Currency Exchange-Rate calculator</title>
 </head>
 <body>
   <div class="error-message"></div>
   <h1></h1>
   <div class="user-input">
-    <form>
-      <label for="user-amount">Enter Amount(USD):</label>
-      <input type="number" id="user-amount" placeholder="enter amount in USD">
-      <select id="currency">
-        <option>GGP</option>
+    <form id="base-currency">
+      <label for="base=currency-select">Convert From:</label>
+      <select id="base-currency-select">
+        <option>USD</option>
         <option>EUR</option>
-        <option>AUD</option>
-        <option>GMD</option>
         <option>JPY</option>
+        <option>CNY</option>
+        <option>GBP</option>
       </select>
-      <button type="submit">convert</button>
+      <button type="submit">Select</button>
+    </form>
+    <form id="conversion-form" class="hidden">
+      <label for="user-amount">Enter Amount(<span id="user-currency"></span>):</label>
+      <input type="number" id="user-amount">
+      <select id="currency">
+      </select>
+      <button type="submit">Convert</button>
     </form>
   </div>
 </body>
