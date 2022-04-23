@@ -20,7 +20,7 @@ Currency Exchanger utilizes the ExchangeRate-API to allow users to select a curr
 ## Setup/Installation Requirements
 
 * Clone the repository
-* sign up for a free key at[ExchangeRate-API](https://www.exchangerate-api.com/) by entering your email and pressing the "Get a Free Key!" button make an account and verify your email to get the key.
+* sign up for a free key at [ExchangeRate-API](https://www.exchangerate-api.com/) by entering your email and pressing the "Get a Free Key!" button make an account and verify your email to get the key.
 * You will be taken to the ExchangeRate-API dashboard where you can see your key and the uses left this month.
 * Create a .env file in the root of the currency exchanger directroy and add API_KEY={YOURKEYHERE} replacing everything after the equal sign with your api key from ExchangeRate-API.
 * install dependencies
