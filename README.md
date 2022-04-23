@@ -29,7 +29,7 @@ $ npm install
 ```
 * open the file by running the start script
 ```
-$ npm run scrip
+$ npm run start
 ```
 
 ## Known Bugs
