@@ -10,7 +10,7 @@ export default class ExchangeApi {
       }
       return response.json();
     } catch(error) {
-      console.log(error.message);
+      $(".error-message").html(`<h1>${error.message}</h1>`);
       return error.message;
     }
   }

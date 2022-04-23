@@ -16,7 +16,6 @@ $("#base-currency").on("submit", async function(e){
   $("#currency").empty();
   if(baseCurrency){
     let exchangeRates = await exchangeApiCall(baseCurrency);
-    $(".heading").append(`<h2>Last Update: ${exchangeRates["time_last_update_utc"].slice(0, -6)}</h2>`)
     $("#user-currency").text(`${exchangeRates["base_code"]}`);
     Object.keys(exchangeRates["conversion_rates"]).forEach(function(currency){
       $("#currency").append(`<option>${currency}</option>`);
@@ -27,7 +26,9 @@ $("#base-currency").on("submit", async function(e){
       e.preventDefault();
       const value = $("#user-amount").val();
       const exchangeTo = $("#currency").val();
-      convertCurrency(exchangeRates, value, exchangeTo);
+      if(value){
+        convertCurrency(exchangeRates, value, exchangeTo);
+      }
     });
   } else {
     $(".error-message").text(`Please select a base currency`);
